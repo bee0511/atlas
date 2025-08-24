@@ -48,6 +48,8 @@ import java.util.Set;
 import static org.apache.atlas.type.AtlasTypeUtil.ATTRIBUTE_QUALIFIED_NAME;
 
 public class AtlasClientHelper {
+    private static final Logger LOG = LoggerFactory.getLogger(AtlasClientHelper.class);
+
     public static final String TRINO_INSTANCE                   = "trino_instance";
     public static final String TRINO_CATALOG                    = "trino_catalog";
     public static final String TRINO_SCHEMA                     = "trino_schema";
@@ -59,7 +61,7 @@ public class AtlasClientHelper {
     public static final String QUALIFIED_NAME_ATTRIBUTE         = "qualifiedName";
     public static final String NAME_ATTRIBUTE                   = "name";
     public static final int    DEFAULT_PAGE_LIMIT               = 10000;
-    private static final Logger LOG = LoggerFactory.getLogger(AtlasClientHelper.class);
+
     private static final String DEFAULT_ATLAS_URL                        = "http://localhost:21000/";
     private static final String APPLICATION_PROPERTY_ATLAS_ENDPOINT      = "atlas.rest.address";
     private static final String TRINO_CATALOG_CONNECTOR_TYPE_ATTRIBUTE   = "connectorType";
