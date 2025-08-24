@@ -28,6 +28,8 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 
 public class IcebergEntityConnector extends AtlasEntityConnector {
+    private static final Logger LOG = LoggerFactory.getLogger(IcebergEntityConnector.class);
+
     public static final String HIVE_DB                                  = "hive_db";
     public static final String ICEBERG_TABLE                            = "iceberg_table";
     public static final String ICEBERG_COLUMN                           = "iceberg_column";
@@ -37,7 +39,6 @@ public class IcebergEntityConnector extends AtlasEntityConnector {
     public static final String TRINO_SCHEMA_HIVE_DB_ATTRIBUTE           = "hive_db";
     public static final String TRINO_TABLE_ICEBERG_TABLE_ATTRIBUTE      = "iceberg_table";
     public static final String TRINO_COLUMN_ICEBERG_COLUMN_ATTRIBUTE    = "iceberg_column";
-    private static final Logger LOG = LoggerFactory.getLogger(IcebergEntityConnector.class);
 
     @Override
     public void connectTrinoCatalog(AtlasClientHelper atlasClient, String instanceName, String catalogName, AtlasEntity entity, AtlasEntityWithExtInfo entityWithExtInfo) {
