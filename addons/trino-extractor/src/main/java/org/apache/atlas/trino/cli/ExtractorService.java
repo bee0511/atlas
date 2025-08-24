@@ -40,10 +40,12 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 public class ExtractorService {
+    private static final Logger LOG = LoggerFactory.getLogger(ExtractorService.class);
+
     public static final int    THREAD_POOL_SIZE          = 5;
     public static final int    CATALOG_EXECUTION_TIMEOUT = 60;
     public static final String TRINO_NAME_ATTRIBUTE      = "name";
-    private static final Logger LOG = LoggerFactory.getLogger(ExtractorService.class);
+
     private static final String TRINO_CATALOG_REGISTERED          = "atlas.trino.catalogs.registered";
     private static final String TRINO_CATALOG_HOOK_ENABLED_PREFIX = "atlas.trino.catalog.hook.enabled.";
     private static final String TRINO_CATALOG_HOOK_ENABLED_SUFFIX = ".namespace";
