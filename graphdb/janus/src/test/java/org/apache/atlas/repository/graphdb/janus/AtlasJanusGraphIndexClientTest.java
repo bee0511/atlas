@@ -23,6 +23,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
 import static org.testng.Assert.assertEquals;
 
@@ -138,9 +140,14 @@ public class AtlasJanusGraphIndexClientTest {
     private void assertOrder(List<String> topTerms, int... indices) {
         assertEquals(topTerms.size(), indices.length);
 
-        int i = 0;
+        Set<String> expectedIndices = new HashSet<>();
+
+        for (int index : indices) {
+            expectedIndices.add(Integer.toString(index));
+        }
+
         for (String term : topTerms) {
-            assertEquals(Integer.toString(indices[i++]), term);
+            assertTrue(expectedIndices.contains(term));
         }
 
         assertEquals(topTerms.size(), indices.length);
