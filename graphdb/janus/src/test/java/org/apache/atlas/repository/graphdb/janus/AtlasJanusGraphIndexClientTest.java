@@ -96,7 +96,11 @@ public class AtlasJanusGraphIndexClientTest {
 
         //10, 10, 28, 27, 16, 1, 30, 36, 36
         //0,  1,  2,   3,  4, 5, 6,  7,  8
-        assertOrder(top5Terms, 7, 8, 6, 2, 3);
+        if (top5Terms.get(0).equals("7") && top5Terms.get(1).equals("8")) {
+            assertOrder(top5Terms, 7, 8, 6, 2, 3);
+        } else {
+            assertOrder(top5Terms, 8, 7, 6, 2, 3);
+        }
     }
 
     @Test
